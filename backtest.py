@@ -11,6 +11,7 @@ class SMAStrategy(bt.Strategy):
     params = (
         ('maperiod', None),
         ('printlog', False),
+        ('quantity', None)
     )
 
     def log(self, txt, dt=None, doprint=False):
@@ -28,6 +29,7 @@ class SMAStrategy(bt.Strategy):
         self.order = None
         self.buyprice = None
         self.buycomm = None
+        self.amount = None
 
         # Add a MovingAverageSimple indicator
         self.sma = bt.indicators.SimpleMovingAverage(
@@ -91,7 +93,8 @@ class SMAStrategy(bt.Strategy):
                 self.log('BUY CREATE, %.2f' % self.dataclose[0])
 
                 # Keep track of the created order to avoid a 2nd order
-                self.order = self.buy()
+                self.amount = (self.broker.getvalue() * self.params.quantity) / self.dataclose[0]
+                self.order = self.buy(size=self.amount)
 
         else:
 
@@ -101,7 +104,7 @@ class SMAStrategy(bt.Strategy):
                 self.log('SELL CREATE, %.2f' % self.dataclose[0])
 
                 # Keep track of the created order to avoid a 2nd order
-                self.order = self.sell()
+                self.order = self.sell(size=self.amount)
                 
 
 # ______________________ End Strategy Class
@@ -162,7 +165,7 @@ def timeFrame(datapath):
 
 
 
-def runbacktest(period, datapath, start, end, commission_val=None, portofolio=10000.0, stake_val=1, plt=False):
+def runbacktest(period, datapath, start, end, commission_val=None, portofolio=10000.0, stake_val=1, quantity=0.01, plt=False):
 
     # Create a cerebro entity
     cerebro = bt.Cerebro()
@@ -176,7 +179,7 @@ def runbacktest(period, datapath, start, end, commission_val=None, portofolio=10
         cerebro.broker.setcommission(commission=commission_val/100) # divide by 100 to remove the %
 
     # Add a strategy
-    cerebro.addstrategy(SMAStrategy, maperiod=period)
+    cerebro.addstrategy(SMAStrategy, maperiod=period, quantity=quantity)
 
     compression, timeframe = timeFrame(datapath)
 
