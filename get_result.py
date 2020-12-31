@@ -8,8 +8,8 @@ quantity = 0.10 # percentage to buy based on the current portofolio amount
 
 start = '2017-01-01'
 end = '2020-12-31'
-# datapath = 'data/BTCUSDT-2017-2020-12h.csv'
-strategies = ['SMA']
+# datapath = 'data/BTCUSDT-2017-2020-1d.csv'
+strategies = ['SMA', 'RSI']
 plot = False
 
 
@@ -20,7 +20,7 @@ for strategy in strategies:
         datapath = 'data/' + data
 
         print('\n ------------ ', datapath)
-        input()
+        print()
 
         csvfile = open('result/{}-result-{}'.format(strategy, datapath[5:]), 'w', newline='')
         result_writer = csv.writer(csvfile, delimiter=',')
