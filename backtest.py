@@ -185,7 +185,7 @@ def timeFrame(datapath):
 
 
 
-def runbacktest(period, datapath, start, end, strategy, commission_val=None, portofolio=10000.0, stake_val=1, quantity=0.01, plt=False):
+def runbacktest(datapath, start, end, period, strategy, commission_val=None, portofolio=10000.0, stake_val=1, quantity=0.01, plt=False):
 
     # Create a cerebro entity
     cerebro = bt.Cerebro()
