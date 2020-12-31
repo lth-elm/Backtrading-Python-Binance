@@ -6,10 +6,8 @@ portofolio = 10000.0
 stake_val = 1
 quantity = 0.10 # percentage to buy based on the current portofolio amount
 
-# start = '2018-03-01'
-# end = '2020-11-15'
-start = '2017-01-01'
-end = '2020-12-31'
+start = '2018-03-01'
+end = '2020-11-15'
 strategies = ['SMA', 'RSI']
 plot = False
 
@@ -20,14 +18,16 @@ for strategy in strategies:
 
         datapath = 'data/' + data
 
+        sep = datapath[5:-4].split(sep='-') # 
+
         print('\n ------------ ', datapath)
         print()
 
-        dataname = 'result/{}-{}-{}{}{}-{}{}{}-{}'.format(strategy, datapath[5:12], start[:4], start[5:7], start[8:], end[:4], end[5:7], end[8:], datapath[23:])
+        dataname = 'result/{}-{}-{}-{}-{}.csv'.format(strategy, sep[0], start.replace('-',''), end.replace('-',''), sep[3])
         csvfile = open(dataname, 'w', newline='')
         result_writer = csv.writer(csvfile, delimiter=',')
 
-        result_writer.writerow(['pairs', 'timeframe', 'start', 'end', 'strategy', 'period', 'portofolio final value', '%'])
+        result_writer.writerow(['pair', 'timeframe', 'start', 'end', 'strategy', 'period', 'portofolio final value', '%'])
 
 
         for period in range(10, 31):
@@ -38,7 +38,7 @@ for strategy in strategies:
 
             print('data processed : %s, %s (Period %2d) - Ending Value : %.2f' % (datapath[5:], strategy, period, end_val))
 
-            result_writer.writerow([datapath[5:12], datapath[23:-4] , start, end, strategy, period, end_val, gain])
+            result_writer.writerow([sep[0], sep[3] , start, end, strategy, period, end_val, gain])
 
             plot=False
 
