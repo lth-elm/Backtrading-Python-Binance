@@ -11,7 +11,7 @@ quantity = 0.10 # percentage to buy based on the current portofolio amount
 start = '2017-01-01'
 end = '2020-12-31'
 strategies = ['SMA', 'RSI']
-plot = True
+plot = False
 
 
 for strategy in strategies:
