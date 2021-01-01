@@ -133,7 +133,7 @@ class RSIStrategy(bt.Strategy):
 
 def timeFrame(datapath):
     """
-    Select the write compression and timeframe
+    Select the write compression and timeframe.
     """
     if datapath[-8:-4] == '1mth':
         compression = 1
@@ -184,6 +184,14 @@ def timeFrame(datapath):
     return compression, timeframe
 
 
+def getWinLoss(analyzer):
+    return analyzer.won.total, analyzer.lost.total
+
+
+def getSQN(analyzer):
+    return round(analyzer.sqn,2)
+
+
 
 def runbacktest(datapath, start, end, period, strategy, commission_val=None, portofolio=10000.0, stake_val=1, quantity=0.01, plt=False):
 
@@ -222,10 +230,19 @@ def runbacktest(datapath, start, end, period, strategy, commission_val=None, por
 
     # Add the Data Feed to Cerebro
     cerebro.adddata(data)
+    
 
-    cerebro.run()
+    cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="ta")
+    cerebro.addanalyzer(bt.analyzers.SQN, _name="sqn")
+
+    strat = cerebro.run()
+    stratexe = strat[0]
+
+    totalwin, totalloss = getWinLoss(stratexe.analyzers.ta.get_analysis())
+    sqn = getSQN(stratexe.analyzers.sqn.get_analysis())
+
 
     if plt:
         cerebro.plot()
 
-    return cerebro.broker.getvalue()
+    return cerebro.broker.getvalue(), totalwin, totalloss, sqn

@@ -6,10 +6,12 @@ portofolio = 10000.0
 stake_val = 1
 quantity = 0.10 # percentage to buy based on the current portofolio amount
 
-start = '2018-03-01'
-end = '2020-11-15'
+# start = '2018-03-01'
+# end = '2020-11-15'
+start = '2017-01-01'
+end = '2020-12-31'
 strategies = ['SMA', 'RSI']
-plot = False
+plot = True
 
 
 for strategy in strategies:
@@ -17,8 +19,7 @@ for strategy in strategies:
     for data in os.listdir("./data"):
 
         datapath = 'data/' + data
-
-        sep = datapath[5:-4].split(sep='-') # 
+        sep = datapath[5:-4].split(sep='-')
 
         print('\n ------------ ', datapath)
         print()
@@ -27,20 +28,18 @@ for strategy in strategies:
         csvfile = open(dataname, 'w', newline='')
         result_writer = csv.writer(csvfile, delimiter=',')
 
-        result_writer.writerow(['pair', 'timeframe', 'start', 'end', 'strategy', 'period', 'portofolio final value', '%'])
+        result_writer.writerow(['Pair', 'Timeframe', 'Start', 'End', 'Strategy', 'Period', 'Final value', '%', 'Total win', 'Total loss', 'SQN'])
 
 
         for period in range(10, 31):
 
-            end_val = backtest.runbacktest(datapath, start, end, period, strategy, commission_val, portofolio, stake_val, quantity, plot)
+            end_val, totalwin, totalloss, sqn = backtest.runbacktest(datapath, start, end, period, strategy, commission_val, portofolio, stake_val, quantity, plot)
             gain = ((end_val - portofolio) / portofolio) * 100
 
 
-            print('data processed : %s, %s (Period %2d) - Ending Value : %.2f' % (datapath[5:], strategy, period, end_val))
+            print('data processed: %s, %s (Period %d) --- Ending Value: %.2f --- Total win/loss %d/%d, SQN %.2f' % (datapath[5:], strategy, period, end_val, totalwin, totalloss, sqn))
 
-            result_writer.writerow([sep[0], sep[3] , start, end, strategy, period, end_val, gain])
-
-            plot=False
+            result_writer.writerow([sep[0], sep[3] , start, end, strategy, period, end_val, gain, totalwin, totalloss, sqn])
 
 
         csvfile.close()
