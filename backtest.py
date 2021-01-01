@@ -185,7 +185,7 @@ def timeFrame(datapath):
 
 
 def getWinLoss(analyzer):
-    return analyzer.won.total, analyzer.lost.total
+    return analyzer.won.total, analyzer.lost.total, analyzer.pnl.net.total
 
 
 def getSQN(analyzer):
@@ -230,7 +230,7 @@ def runbacktest(datapath, start, end, period, strategy, commission_val=None, por
 
     # Add the Data Feed to Cerebro
     cerebro.adddata(data)
-    
+
 
     cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="ta")
     cerebro.addanalyzer(bt.analyzers.SQN, _name="sqn")
@@ -238,11 +238,15 @@ def runbacktest(datapath, start, end, period, strategy, commission_val=None, por
     strat = cerebro.run()
     stratexe = strat[0]
 
-    totalwin, totalloss = getWinLoss(stratexe.analyzers.ta.get_analysis())
+    try:
+        totalwin, totalloss, pnl_net = getWinLoss(stratexe.analyzers.ta.get_analysis())
+    except KeyError:
+        totalwin, totalloss, pnl_net = 0, 0, 0
+
     sqn = getSQN(stratexe.analyzers.sqn.get_analysis())
 
 
     if plt:
         cerebro.plot()
 
-    return cerebro.broker.getvalue(), totalwin, totalloss, sqn
+    return cerebro.broker.getvalue(), totalwin, totalloss, pnl_net, sqn
