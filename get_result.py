@@ -34,12 +34,12 @@ for strategy in strategies:
         for period in range(10, 31):
 
             end_val, totalwin, totalloss, pnl_net, sqn = backtest.runbacktest(datapath, start, end, period, strategy, commission_val, portofolio, stake_val, quantity, plot)
-            gain = (pnl_net / portofolio) * 100
+            profit = (pnl_net / portofolio) * 100
 
 
             print('data processed: %s, %s (Period %d) --- Ending Value: %.2f --- Total win/loss %d/%d, SQN %.2f' % (datapath[5:], strategy, period, end_val, totalwin, totalloss, sqn))
 
-            result_writer.writerow([sep[0], sep[3] , start, end, strategy, period, round(end_val,3), round(gain,3), totalwin, totalloss, sqn])
+            result_writer.writerow([sep[0], sep[3] , start, end, strategy, period, round(end_val,3), round(profit,3), totalwin, totalloss, sqn])
 
 
         csvfile.close()
