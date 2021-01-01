@@ -6,8 +6,6 @@ portofolio = 10000.0
 stake_val = 1
 quantity = 0.10 # percentage to buy based on the current portofolio amount
 
-# start = '2018-03-01'
-# end = '2020-11-15'
 start = '2017-01-01'
 end = '2020-12-31'
 strategies = ['SMA', 'RSI']
