@@ -94,7 +94,6 @@ topSQN
 
 
 <div>
-
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -279,7 +278,6 @@ topSQN
     </tr>
   </tbody>
 </table>
-
 </div>
 
 
@@ -457,7 +455,7 @@ def sameETHTop(s):
     Display in a different color the strategies on ETHUSDT pair already present in our previous all time top 10.
     """
     if (s['Pair'] == 'ETHUSDT' and s['Timeframe'] == '6h' and s['Strategy'] == 'SMA') and (s['Period'] == 11 or s['Period'] == 12 or s['Period'] == 10):
-        return ['color: yellow']*s.size
+        return ['background-color: green']*s.size
     else:
         return ['background-color: default']*s.size
         
@@ -468,160 +466,160 @@ topNoBullrun.reset_index(drop=True).style.apply(sameETHTop, axis=1)
 
 
 <style  type="text/css" >
-#T_be4d901a_4f95_11eb_b063_106530f419farow0_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow0_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow1_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow3_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow5_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow6_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow8_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow9_col11{
+#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow0_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow1_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow3_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow5_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow6_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow8_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow9_col11{
             background-color:  default;
-        }#T_be4d901a_4f95_11eb_b063_106530f419farow2_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow2_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow4_col11,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col0,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col1,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col2,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col3,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col4,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col5,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col6,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col7,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col8,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col9,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col10,#T_be4d901a_4f95_11eb_b063_106530f419farow7_col11{
-            color:  yellow;
-        }</style><table id="T_be4d901a_4f95_11eb_b063_106530f419fa" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Pair</th>        <th class="col_heading level0 col1" >Timeframe</th>        <th class="col_heading level0 col2" >Start</th>        <th class="col_heading level0 col3" >End</th>        <th class="col_heading level0 col4" >Strategy</th>        <th class="col_heading level0 col5" >Period</th>        <th class="col_heading level0 col6" >Final value</th>        <th class="col_heading level0 col7" >%</th>        <th class="col_heading level0 col8" >Total win</th>        <th class="col_heading level0 col9" >Total loss</th>        <th class="col_heading level0 col10" >SQN</th>        <th class="col_heading level0 col11" >Rank</th>    </tr></thead><tbody>
+        }#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow2_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow4_col11,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col0,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col1,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col2,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col3,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col4,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col5,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col6,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col7,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col8,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col9,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col10,#T_cb5866be_4f9d_11eb_a948_106530f419farow7_col11{
+            background-color:  green;
+        }</style><table id="T_cb5866be_4f9d_11eb_a948_106530f419fa" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Pair</th>        <th class="col_heading level0 col1" >Timeframe</th>        <th class="col_heading level0 col2" >Start</th>        <th class="col_heading level0 col3" >End</th>        <th class="col_heading level0 col4" >Strategy</th>        <th class="col_heading level0 col5" >Period</th>        <th class="col_heading level0 col6" >Final value</th>        <th class="col_heading level0 col7" >%</th>        <th class="col_heading level0 col8" >Total win</th>        <th class="col_heading level0 col9" >Total loss</th>        <th class="col_heading level0 col10" >SQN</th>        <th class="col_heading level0 col11" >Rank</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col0" class="data row0 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col1" class="data row0 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col2" class="data row0 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col3" class="data row0 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col4" class="data row0 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col5" class="data row0 col5" >17</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col6" class="data row0 col6" >12711.644000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col7" class="data row0 col7" >27.116000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col8" class="data row0 col8" >95</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col9" class="data row0 col9" >250</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col10" class="data row0 col10" >2.420000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow0_col11" class="data row0 col11" >1.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col0" class="data row0 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col1" class="data row0 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col2" class="data row0 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col3" class="data row0 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col4" class="data row0 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col5" class="data row0 col5" >17</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col6" class="data row0 col6" >12711.644000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col7" class="data row0 col7" >27.116000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col8" class="data row0 col8" >95</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col9" class="data row0 col9" >250</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col10" class="data row0 col10" >2.420000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow0_col11" class="data row0 col11" >1.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row1" class="row_heading level0 row1" >1</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col0" class="data row1 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col1" class="data row1 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col2" class="data row1 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col3" class="data row1 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col4" class="data row1 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col5" class="data row1 col5" >15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col6" class="data row1 col6" >12618.773000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col7" class="data row1 col7" >26.188000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col8" class="data row1 col8" >100</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col9" class="data row1 col9" >270</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col10" class="data row1 col10" >2.380000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow1_col11" class="data row1 col11" >2.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row1" class="row_heading level0 row1" >1</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col0" class="data row1 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col1" class="data row1 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col2" class="data row1 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col3" class="data row1 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col4" class="data row1 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col5" class="data row1 col5" >15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col6" class="data row1 col6" >12618.773000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col7" class="data row1 col7" >26.188000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col8" class="data row1 col8" >100</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col9" class="data row1 col9" >270</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col10" class="data row1 col10" >2.380000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow1_col11" class="data row1 col11" >2.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row2" class="row_heading level0 row2" >2</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col0" class="data row2 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col1" class="data row2 col1" >6h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col2" class="data row2 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col3" class="data row2 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col4" class="data row2 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col5" class="data row2 col5" >11</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col6" class="data row2 col6" >12579.214000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col7" class="data row2 col7" >25.792000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col8" class="data row2 col8" >91</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col9" class="data row2 col9" >207</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col10" class="data row2 col10" >2.350000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow2_col11" class="data row2 col11" >3.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row2" class="row_heading level0 row2" >2</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col0" class="data row2 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col1" class="data row2 col1" >6h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col2" class="data row2 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col3" class="data row2 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col4" class="data row2 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col5" class="data row2 col5" >11</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col6" class="data row2 col6" >12579.214000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col7" class="data row2 col7" >25.792000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col8" class="data row2 col8" >91</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col9" class="data row2 col9" >207</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col10" class="data row2 col10" >2.350000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow2_col11" class="data row2 col11" >3.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row3" class="row_heading level0 row3" >3</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col0" class="data row3 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col1" class="data row3 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col2" class="data row3 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col3" class="data row3 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col4" class="data row3 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col5" class="data row3 col5" >18</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col6" class="data row3 col6" >12569.414000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col7" class="data row3 col7" >25.694000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col8" class="data row3 col8" >86</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col9" class="data row3 col9" >254</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col10" class="data row3 col10" >2.220000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow3_col11" class="data row3 col11" >4.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row3" class="row_heading level0 row3" >3</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col0" class="data row3 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col1" class="data row3 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col2" class="data row3 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col3" class="data row3 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col4" class="data row3 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col5" class="data row3 col5" >18</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col6" class="data row3 col6" >12569.414000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col7" class="data row3 col7" >25.694000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col8" class="data row3 col8" >86</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col9" class="data row3 col9" >254</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col10" class="data row3 col10" >2.220000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow3_col11" class="data row3 col11" >4.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row4" class="row_heading level0 row4" >4</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col0" class="data row4 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col1" class="data row4 col1" >6h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col2" class="data row4 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col3" class="data row4 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col4" class="data row4 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col5" class="data row4 col5" >12</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col6" class="data row4 col6" >12387.524000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col7" class="data row4 col7" >23.875000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col8" class="data row4 col8" >87</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col9" class="data row4 col9" >209</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col10" class="data row4 col10" >2.210000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow4_col11" class="data row4 col11" >5.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row4" class="row_heading level0 row4" >4</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col0" class="data row4 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col1" class="data row4 col1" >6h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col2" class="data row4 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col3" class="data row4 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col4" class="data row4 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col5" class="data row4 col5" >12</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col6" class="data row4 col6" >12387.524000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col7" class="data row4 col7" >23.875000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col8" class="data row4 col8" >87</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col9" class="data row4 col9" >209</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col10" class="data row4 col10" >2.210000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow4_col11" class="data row4 col11" >5.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row5" class="row_heading level0 row5" >5</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col0" class="data row5 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col1" class="data row5 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col2" class="data row5 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col3" class="data row5 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col4" class="data row5 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col5" class="data row5 col5" >14</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col6" class="data row5 col6" >12407.632000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col7" class="data row5 col7" >24.076000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col8" class="data row5 col8" >103</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col9" class="data row5 col9" >300</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col10" class="data row5 col10" >2.200000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow5_col11" class="data row5 col11" >6.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row5" class="row_heading level0 row5" >5</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col0" class="data row5 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col1" class="data row5 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col2" class="data row5 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col3" class="data row5 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col4" class="data row5 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col5" class="data row5 col5" >14</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col6" class="data row5 col6" >12407.632000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col7" class="data row5 col7" >24.076000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col8" class="data row5 col8" >103</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col9" class="data row5 col9" >300</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col10" class="data row5 col10" >2.200000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow5_col11" class="data row5 col11" >6.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row6" class="row_heading level0 row6" >6</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col0" class="data row6 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col1" class="data row6 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col2" class="data row6 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col3" class="data row6 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col4" class="data row6 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col5" class="data row6 col5" >16</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col6" class="data row6 col6" >12434.159000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col7" class="data row6 col7" >24.342000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col8" class="data row6 col8" >98</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col9" class="data row6 col9" >266</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col10" class="data row6 col10" >2.190000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow6_col11" class="data row6 col11" >7.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row6" class="row_heading level0 row6" >6</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col0" class="data row6 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col1" class="data row6 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col2" class="data row6 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col3" class="data row6 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col4" class="data row6 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col5" class="data row6 col5" >16</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col6" class="data row6 col6" >12434.159000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col7" class="data row6 col7" >24.342000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col8" class="data row6 col8" >98</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col9" class="data row6 col9" >266</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col10" class="data row6 col10" >2.190000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow6_col11" class="data row6 col11" >7.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row7" class="row_heading level0 row7" >7</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col0" class="data row7 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col1" class="data row7 col1" >6h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col2" class="data row7 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col3" class="data row7 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col4" class="data row7 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col5" class="data row7 col5" >10</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col6" class="data row7 col6" >12397.067000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col7" class="data row7 col7" >23.971000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col8" class="data row7 col8" >97</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col9" class="data row7 col9" >224</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col10" class="data row7 col10" >2.180000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow7_col11" class="data row7 col11" >8.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row7" class="row_heading level0 row7" >7</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col0" class="data row7 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col1" class="data row7 col1" >6h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col2" class="data row7 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col3" class="data row7 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col4" class="data row7 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col5" class="data row7 col5" >10</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col6" class="data row7 col6" >12397.067000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col7" class="data row7 col7" >23.971000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col8" class="data row7 col8" >97</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col9" class="data row7 col9" >224</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col10" class="data row7 col10" >2.180000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow7_col11" class="data row7 col11" >8.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row8" class="row_heading level0 row8" >8</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col0" class="data row8 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col1" class="data row8 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col2" class="data row8 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col3" class="data row8 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col4" class="data row8 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col5" class="data row8 col5" >19</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col6" class="data row8 col6" >12509.829000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col7" class="data row8 col7" >25.098000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col8" class="data row8 col8" >83</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col9" class="data row8 col9" >238</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col10" class="data row8 col10" >2.170000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow8_col11" class="data row8 col11" >9.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row8" class="row_heading level0 row8" >8</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col0" class="data row8 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col1" class="data row8 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col2" class="data row8 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col3" class="data row8 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col4" class="data row8 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col5" class="data row8 col5" >19</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col6" class="data row8 col6" >12509.829000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col7" class="data row8 col7" >25.098000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col8" class="data row8 col8" >83</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col9" class="data row8 col9" >238</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col10" class="data row8 col10" >2.170000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow8_col11" class="data row8 col11" >9.000000</td>
             </tr>
             <tr>
-                        <th id="T_be4d901a_4f95_11eb_b063_106530f419falevel0_row9" class="row_heading level0 row9" >9</th>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col0" class="data row9 col0" >ETHUSDT</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col1" class="data row9 col1" >4h</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col2" class="data row9 col2" >2018-03-01</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col3" class="data row9 col3" >2020-11-15</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col4" class="data row9 col4" >SMA</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col5" class="data row9 col5" >13</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col6" class="data row9 col6" >12159.119000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col7" class="data row9 col7" >21.591000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col8" class="data row9 col8" >119</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col9" class="data row9 col9" >311</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col10" class="data row9 col10" >2.050000</td>
-                        <td id="T_be4d901a_4f95_11eb_b063_106530f419farow9_col11" class="data row9 col11" >10.000000</td>
+                        <th id="T_cb5866be_4f9d_11eb_a948_106530f419falevel0_row9" class="row_heading level0 row9" >9</th>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col0" class="data row9 col0" >ETHUSDT</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col1" class="data row9 col1" >4h</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col2" class="data row9 col2" >2018-03-01</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col3" class="data row9 col3" >2020-11-15</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col4" class="data row9 col4" >SMA</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col5" class="data row9 col5" >13</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col6" class="data row9 col6" >12159.119000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col7" class="data row9 col7" >21.591000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col8" class="data row9 col8" >119</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col9" class="data row9 col9" >311</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col10" class="data row9 col10" >2.050000</td>
+                        <td id="T_cb5866be_4f9d_11eb_a948_106530f419farow9_col11" class="data row9 col11" >10.000000</td>
             </tr>
     </tbody></table>
 
