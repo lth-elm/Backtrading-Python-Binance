@@ -46,7 +46,7 @@ You can then get the historical candlesticks you want by defining the cryptocurr
 candlesticks = client.get_historical_klines("BTCUSDT", Client.KLINE_INTERVAL_4HOUR, "1 Jan, 2017", "25 Dec, 2020")
 ```
 
-The datas we will get are as follow :
+The datas we obtain are as follow :
 
 ```
 [
@@ -67,7 +67,9 @@ The datas we will get are as follow :
 ]
 ```
 
-Before saving these datas to a csv we need to divide the timestamp we get ('Open time') by 1000 to ignore the miliseconds.
+Before saving these datas to a csv we need to divide the timestamp we obtain ('Open time') by 1000 to ignore the miliseconds.
+
+We fetched the historical candlesticks for the **BTCUSDT** and **ETHUSDT** pairs for each **1w-3d-1d-12h-8h-6h-4h-2h-1h-30m-15m** timeframes.
 
 
 ## Get results <a name="getresults"></a>
@@ -121,6 +123,8 @@ BTCUSDT,1h,2017-01-01,2020-12-31,SMA,30,11023.452,10.123,265,1199,0.88
 ```
 
 For example for this strategy ([SMA-BTCUSDT-20170101-20201231-1h.csv](result/SMA-BTCUSDT-20170101-20201231-1h.csv)) using SMA on the 1 hour timeframe BTCUSDT pair from 2017 to 2020, we can notice that the lower the SMA period is the lower our sqn and profit will be (in that case even negative), and conversely when the SMA period is higher our profit is better.
+
+*The code was run again between 2018-03-01 and 2020-11-15 to exclude the bullrun period and test our strategies during upward trend and range period.*
 
 
 ## Backtest <a name="backtest"></a>
@@ -201,7 +205,59 @@ else :
 
 &nbsp;
 
-*compression and timeframe*
+* Get compression and timeframe
+
+When we create the data feed we need to define the compression and timeframe.
+
+```python
+data = bt.feeds.GenericCSVData(
+        dataname = datapath,
+        dtformat = 2, 
+        compression = compression, 
+        timeframe = timeframe,
+        fromdate = datetime.datetime.strptime(start, '%Y-%m-%d'),
+        todate = datetime.datetime.strptime(end, '%Y-%m-%d'),
+        reverse = False)
+
+cerebro.adddata(data)
+```
+
+For a 3 days timeframe (one candlestick represent 3 days) we would have ```compression = 3``` and ```timeframe = bt.TimeFrame.Days```. However, for a 2h timeframe ```compression = 120``` but ```timeframe = bt.TimeFrame.Minutes```.
+
+To automatically do this conversion the ```runbacktest()``` function will analyse the given datapath name and pass it to another function that will read the file name and retrieve its timeframe (e.g. data/ETHUSDT-2017-2020-**4h**.csv).
+
+```python
+def timeFrame(datapath):
+    """
+    Select the write compression and timeframe.
+    """
+    sepdatapath = datapath[5:-4].split(sep='-') # ignore name file 'data/' and '.csv'
+    tf = sepdatapath[3]
+
+    if tf == '1mth':
+        compression = 1
+        timeframe = bt.TimeFrame.Months
+    elif tf == '12h':
+        compression = 720
+        timeframe = bt.TimeFrame.Minutes
+    
+    ...
+
+    elif tf == '8h':
+        compression = 480
+        timeframe = bt.TimeFrame.Minutes
+    else:
+        print('dataframe not recognized')
+        exit()
+
+    return compression, timeframe
+```
+
+*Later this function can be improved to save more lines by autocomputing the compression if we have a hour timeframe (e.g. if 'h' take what's in the front, say 12 and multiply it by 60 => 720 and timeframe = bt.TimeFrame.Minutes).*
+
+&nbsp;
+
+
 
 
 # Analysis <a name="analysis"></a>
