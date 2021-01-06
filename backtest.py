@@ -135,46 +135,49 @@ def timeFrame(datapath):
     """
     Select the write compression and timeframe.
     """
-    if datapath[-8:-4] == '1mth':
+    sepdatapath = datapath[5:-4].split(sep='-') # ignore name file 'data/' and '.csv'
+    tf = sepdatapath[3]
+
+    if tf == '1mth':
         compression = 1
         timeframe = bt.TimeFrame.Months
-    elif datapath[-7:-4] == '12h':
+    elif tf == '12h':
         compression = 720
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-7:-4] == '15m':
+    elif tf == '15m':
         compression = 15
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-7:-4] == '30m':
+    elif tf == '30m':
         compression = 30
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '1d':
+    elif tf == '1d':
         compression = 1
         timeframe = bt.TimeFrame.Days
-    elif datapath[-6:-4] == '1h':
+    elif tf == '1h':
         compression = 60
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '3m':
+    elif tf == '3m':
         compression = 3
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '2h':
+    elif tf == '2h':
         compression = 120
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '3d':
+    elif tf == '3d':
         compression = 3
         timeframe = bt.TimeFrame.Days
-    elif datapath[-6:-4] == '1w':
+    elif tf == '1w':
         compression = 1
         timeframe = bt.TimeFrame.Weeks
-    elif datapath[-6:-4] == '4h':
+    elif tf == '4h':
         compression = 240
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '5m':
+    elif tf == '5m':
         compression = 5
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '6h':
+    elif tf == '6h':
         compression = 360
         timeframe = bt.TimeFrame.Minutes
-    elif datapath[-6:-4] == '8h':
+    elif tf == '8h':
         compression = 480
         timeframe = bt.TimeFrame.Minutes
     else:
