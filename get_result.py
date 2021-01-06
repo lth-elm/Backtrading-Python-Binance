@@ -5,6 +5,7 @@ commission_val = 0.04 # 0.04% taker fees binance usdt futures
 portofolio = 10000.0 # amount of money we start with
 stake_val = 1
 quantity = 0.10 # percentage to buy based on the current portofolio amount
+# here it would be a unit equivalent to 1000$ if the value of our portofolio didn't change
 
 start = '2017-01-01'
 end = '2020-12-31'
