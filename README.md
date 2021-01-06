@@ -2,6 +2,7 @@
 2. [Code review](#review)
     1. [Get candlesticks](#getdata)
     2. [Get results](#getresults)
+    3. [Backtest](#backtest)
 3. [Analysis](#analysis)
 
 
@@ -80,7 +81,7 @@ commission_val = 0.04 # 0.04% taker fees binance usdt futures
 portofolio = 10000.0 # amount of money we start with
 stake_val = 1
 quantity = 0.10 # percentage to buy based on the current portofolio amount
-# here it would be a unit equivalent to 1000$ if the value of our portofolio didn't change
+# here it would correspond to a unit equivalent to 1000$ if the value of our portofolio didn't change
 
 start = '2017-01-01'
 end = '2020-12-31'
@@ -113,7 +114,21 @@ BTCUSDT,1h,2017-01-01,2020-12-31,SMA,29,11033.763,10.226,269,1226,0.88
 BTCUSDT,1h,2017-01-01,2020-12-31,SMA,30,11023.452,10.123,265,1199,0.88
 ```
 
-For example for this strategy ([SMA-BTCUSDT-20170101-20201231-1h.csv](result/SMA-BTCUSDT-20170101-20201231-1h.csv)) using SMA on the 1 hour dataframe BTCUSDT pair from 2017 to 2020, we can notice that the lower the SMA period is the lower our sqn and profit will be (in that case even negative), and conversely when the SMA period is higher our profit is better.  
+For example for this strategy ([SMA-BTCUSDT-20170101-20201231-1h.csv](result/SMA-BTCUSDT-20170101-20201231-1h.csv)) using SMA on the 1 hour dataframe BTCUSDT pair from 2017 to 2020, we can notice that the lower the SMA period is the lower our sqn and profit will be (in that case even negative), and conversely when the SMA period is higher our profit is better.
+
+
+## Backtest <a name="backtest"></a>
+
+The [backtest.py](backtest.py) code was mostly based on the [Backtrader Quickstart Guide](https://www.backtrader.com/docu/quickstart/quickstart/). However, some modifications were applied and functions added to respond our needs so until this section is filled with more details know that two strategies are implemented :
+
+```python
+class SMAStrategy(bt.Strategy):
+```
+
+* SMA strategy based on the SMA indicator. If we are not already in a position and the closure price of the last candlestick is higher than the indicator (that mean we cross the sma from bellow to top), then we buy a size equivalent to 10% of the current portofolio amount.
+![SMA crossed](./README_files/crossSMA.png "SMA crossed")
+
+
 
 
 # Analysis <a name="analysis"></a>
