@@ -126,6 +126,7 @@ class SMAStrategy(bt.Strategy):
 ```
 
 * SMA strategy based on the SMA indicator. If we are not already in a position and the closure price of the last candlestick is higher than the indicator (that mean we cross the sma from bellow to top), then we buy a size equivalent to 10% of the current portofolio amount.
+
 ![SMA crossed](./README_files/crossSMA.png "SMA crossed")
 
 
