@@ -22,6 +22,8 @@ Finally the top 10 strategies will be saved to a [JSON file](top10sqn.json) so t
 
 *Ideally, the backtest will run automatically each X period and reset the best strategy.*
 
+&nbsp;
+
 
 # Code review <a name="review"></a>
 
@@ -257,7 +259,28 @@ def timeFrame(datapath):
 
 &nbsp;
 
+To complete our program we've added two analyzers from backtrader ([analyzers reference](https://www.backtrader.com/docu/analyzers-reference/)) :
 
+```python
+cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="ta")
+cerebro.addanalyzer(bt.analyzers.SQN, _name="sqn")
+```
+
+It enable us to get the total number of win/loss, the net pnl and the sqn after a strategy was run.
+
+```python
+totalwin, totalloss, pnl_net = getWinLoss(stratexe.analyzers.ta.get_analysis())
+sqn = getSQN(stratexe.analyzers.sqn.get_analysis())
+```
+
+```python
+def getWinLoss(analyzer):
+    return analyzer.won.total, analyzer.lost.total, analyzer.pnl.net.total
+def getSQN(analyzer):
+    return round(analyzer.sqn,2)
+```
+
+&nbsp;
 
 
 # Analysis <a name="analysis"></a>
