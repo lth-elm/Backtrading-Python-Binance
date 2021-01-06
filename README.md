@@ -119,13 +119,32 @@ For example for this strategy ([SMA-BTCUSDT-20170101-20201231-1h.csv](result/SMA
 
 ## Backtest <a name="backtest"></a>
 
-The [backtest.py](backtest.py) code was mostly based on the [Backtrader Quickstart Guide](https://www.backtrader.com/docu/quickstart/quickstart/). However, some modifications were applied and functions added to respond our needs so until this section is filled with more details know that two strategies are implemented :
+The [backtest.py](backtest.py) code was mostly based on the [Backtrader Quickstart Guide](https://www.backtrader.com/docu/quickstart/quickstart/). However, some modifications were applied and functions added to respond our needs so until this section is filled with more details know that :
+
+**Two strategies are implemented :**
 
 ```python
 class SMAStrategy(bt.Strategy):
 ```
 
 * SMA strategy based on the SMA indicator. If we are not already in a position and the closure price of the last candlestick is higher than the indicator (that mean we cross the sma from bellow to top), then we buy a size equivalent to 10% of the current portofolio amount.
+```python
+# Check if we are in the market
+if not self.position:
+
+    # Not yet ... we MIGHT BUY if ...
+    if self.dataclose[0] > self.sma[0]:
+
+        # Keep track of the created order to avoid a 2nd order
+        self.amount = (self.broker.getvalue() * self.params.quantity) / self.dataclose[0]
+        self.order = self.buy(size=self.amount)
+else:
+    # Already in the market ... we might sell
+    if self.dataclose[0] < self.sma[0]:
+
+        # Keep track of the created order to avoid a 2nd order
+        self.order = self.sell(size=self.amount)
+```
 
 ![SMA crossed](./README_files/crossSMA.png "SMA crossed")
 
