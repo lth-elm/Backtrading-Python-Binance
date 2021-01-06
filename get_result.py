@@ -19,7 +19,8 @@ for strategy in strategies:
     for data in os.listdir("./data"):
 
         datapath = 'data/' + data
-        sep = datapath[5:-4].split(sep='-')
+        sep = datapath[5:-4].split(sep='-') # ignore name file 'data/' and '.csv'
+        # sep[0] = pair; sep[1] = year start; sep[2] = year end; sep[3] = timeframe
 
         print('\n ------------ ', datapath)
         print()
@@ -28,7 +29,7 @@ for strategy in strategies:
         csvfile = open(dataname, 'w', newline='')
         result_writer = csv.writer(csvfile, delimiter=',')
 
-        result_writer.writerow(['Pair', 'Timeframe', 'Start', 'End', 'Strategy', 'Period', 'Final value', '%', 'Total win', 'Total loss', 'SQN'])
+        result_writer.writerow(['Pair', 'Timeframe', 'Start', 'End', 'Strategy', 'Period', 'Final value', '%', 'Total win', 'Total loss', 'SQN']) # init header
 
 
         for period in periodRange:
@@ -36,7 +37,7 @@ for strategy in strategies:
             end_val, totalwin, totalloss, pnl_net, sqn = backtest.runbacktest(datapath, start, end, period, strategy, commission_val, portofolio, stake_val, quantity, plot)
             profit = (pnl_net / portofolio) * 100
 
-
+            # view the data in the console while processing
             print('data processed: %s, %s (Period %d) --- Ending Value: %.2f --- Total win/loss %d/%d, SQN %.2f' % (datapath[5:], strategy, period, end_val, totalwin, totalloss, sqn))
 
             result_writer.writerow([sep[0], sep[3] , start, end, strategy, period, round(end_val,3), round(profit,3), totalwin, totalloss, sqn])
