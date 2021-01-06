@@ -101,6 +101,12 @@ This is the result of a simple strategy using RSI with a period 14 on the BTCUSD
 
 We then loop through each strategy in each file and in each period, and we get in return additional details for each strategy such as the **portofolio final amount**, the **total number of wins and losses**, the **net profit and loss** and finally the **SQN value** which is an indicator designed to assist traders in determining the global quality of a trading system.
 
+For that we call the ```runbacktest``` function imported from **backtest.py**.
+
+```python
+end_val, totalwin, totalloss, pnl_net, sqn = backtest.runbacktest(datapath, start, end, period, strategy, commission_val, portofolio, stake_val, quantity, plot)
+```
+
 At last, we save in differents files the result of each strategy as follow :
 
 ```
@@ -114,41 +120,88 @@ BTCUSDT,1h,2017-01-01,2020-12-31,SMA,29,11033.763,10.226,269,1226,0.88
 BTCUSDT,1h,2017-01-01,2020-12-31,SMA,30,11023.452,10.123,265,1199,0.88
 ```
 
-For example for this strategy ([SMA-BTCUSDT-20170101-20201231-1h.csv](result/SMA-BTCUSDT-20170101-20201231-1h.csv)) using SMA on the 1 hour dataframe BTCUSDT pair from 2017 to 2020, we can notice that the lower the SMA period is the lower our sqn and profit will be (in that case even negative), and conversely when the SMA period is higher our profit is better.
+For example for this strategy ([SMA-BTCUSDT-20170101-20201231-1h.csv](result/SMA-BTCUSDT-20170101-20201231-1h.csv)) using SMA on the 1 hour timeframe BTCUSDT pair from 2017 to 2020, we can notice that the lower the SMA period is the lower our sqn and profit will be (in that case even negative), and conversely when the SMA period is higher our profit is better.
 
 
 ## Backtest <a name="backtest"></a>
 
-The [backtest.py](backtest.py) code was mostly based on the [Backtrader Quickstart Guide](https://www.backtrader.com/docu/quickstart/quickstart/). However, some modifications were applied and functions added to respond our needs so until this section is filled with more details know that :
+The [backtest.py](backtest.py) code was mostly based on the [Backtrader Quickstart Guide](https://www.backtrader.com/docu/quickstart/quickstart/). However, some modifications were applied and functionalities added to respond our needs.
 
-**Two strategies are implemented :**
+**Two strategies were implemented :**
+
+* Using SMA :
 
 ```python
 class SMAStrategy(bt.Strategy):
+    params = (
+        ('maperiod', None),
+        ('quantity', None)
+    )
 ```
 
-* SMA strategy based on the SMA indicator. If we are not already in a position and the closure price of the last candlestick is higher than the indicator (that mean we cross the sma from bellow to top), then we buy a size equivalent to 10% of the current portofolio amount.
+This strategy is based on the SMA indicator. If we are not already in a position and the closure price of the last candlestick is higher than the indicator (i.e. we cross the sma from bellow to top), then we buy a size equivalent to 10% of the current portofolio amount. We sell when the opposite happen.
+
+![SMA crossed](./README_files/crossSMA.png "SMA crossed")
+
 ```python
 # Check if we are in the market
 if not self.position:
-
     # Not yet ... we MIGHT BUY if ...
     if self.dataclose[0] > self.sma[0]:
-
         # Keep track of the created order to avoid a 2nd order
         self.amount = (self.broker.getvalue() * self.params.quantity) / self.dataclose[0]
         self.order = self.buy(size=self.amount)
 else:
     # Already in the market ... we might sell
     if self.dataclose[0] < self.sma[0]:
-
         # Keep track of the created order to avoid a 2nd order
         self.order = self.sell(size=self.amount)
 ```
 
-![SMA crossed](./README_files/crossSMA.png "SMA crossed")
+* Using RSI :
 
+```python
+class RSIStrategy(bt.Strategy):
+    params = (
+        ('maperiod', None),
+        ('quantity', None)
+    )
+```
 
+Based on the RSI indicator, if we are not already in a position and the rsi go below 30 then we buy a size equivalent to 10% of the current portofolio amount that we will sell when rsi > 70.
+
+```python
+# Check if we are in the market
+if not self.position:
+    # Not yet ... we MIGHT BUY if ...
+    if self.rsi < 30:
+        # Keep track of the created order to avoid a 2nd order
+        self.amount = (self.broker.getvalue() * self.params.quantity) / self.dataclose[0]
+        self.order = self.buy(size=self.amount)
+else:
+    # Already in the market ... we might sell
+    if self.rsi > 70:
+        # Keep track of the created order to avoid a 2nd order
+        self.order = self.sell(size=self.amount)
+```
+
+* Strategy selection
+
+Depending on the parameter given in the ```runbacktest``` function we will add one of the two strategy we have written and give it the period we want to use and quantity in % of our portofolio that we want to use.
+
+```python
+if strategy == 'SMA':
+    cerebro.addstrategy(SMAStrategy, maperiod=period, quantity=quantity)
+elif strategy == 'RSI':
+    cerebro.addstrategy(RSIStrategy, maperiod=period, quantity=quantity)
+else :
+    print('no strategy')
+    exit()
+```
+
+&nbsp;
+
+*compression and timeframe*
 
 
 # Analysis <a name="analysis"></a>
