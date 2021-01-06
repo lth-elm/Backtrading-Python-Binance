@@ -276,6 +276,7 @@ sqn = getSQN(stratexe.analyzers.sqn.get_analysis())
 ```python
 def getWinLoss(analyzer):
     return analyzer.won.total, analyzer.lost.total, analyzer.pnl.net.total
+    
 def getSQN(analyzer):
     return round(analyzer.sqn,2)
 ```
