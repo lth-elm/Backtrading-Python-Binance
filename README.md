@@ -4,6 +4,7 @@
     2. [Get results](#getresults)
     3. [Backtest](#backtest)
 3. [Analysis](#analysis)
+4. [Links and Addresses](#linksaddresses)
 
 
 # Introduction and Roadmap <a name="introduction"></a>
@@ -19,6 +20,8 @@ Finally the top 10 strategies will be saved to a [JSON file](top10sqn.json) so t
 &nbsp;
 
 *Later, the algorithm will be adapted for trading futures and the strategies will be improved. The bot will then be connected to Binance and take automatic positions according the best strategy returned by the backtest.*
+
+***You can have a look at that repository for an improved and different trading bot : [tradingview-webhook-trading-bot](https://github.com/lth-elm/tradingview-webhook-trading-bot)***
 
 *Ideally, the backtest will run automatically each X period and reset the best strategy.*
 
@@ -286,4 +289,38 @@ def getSQN(analyzer):
 
 # Analysis <a name="analysis"></a>
 
-Find the analysis in [README.ipynb](README.ipynb) notebook.
+**Find the analysis in [README.ipynb](README.ipynb) notebook.**
+
+&nbsp;
+&nbsp;
+
+
+# Links and Addresses <a name="linksaddresses"></a>
+
+* Binance and Binance future:
+
+https://accounts.binance.com/en/register?ref=MJB86NYU to register to Binance and save 10% comission fee.
+
+https://www.binance.com/en/futures/ref/154947021 for binance future and to also save 10%.
+
+___
+
+If it was interesting and you've learned something feel free to support me by sending any amount of cryptos to one of the following addresses :)
+
+* Ethereum, Matic Mainet and BSC :
+
+0xa1eF4B0eA4f2a45Dc60baba368BDB8656B6fD580
+
+* Solana :
+
+2c1F4Rs63nL1VCuLP7Qz776X1NemfNUfYjMWTALQzrwh
+
+* Bitcoin :
+
+3DXrC7ZXxYa4bFbjL3ofgWxfeeiAzzHWf4
+
+
+&nbsp;
+
+
+**Thank you for reading all the way through !**
