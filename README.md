@@ -292,7 +292,7 @@ def getSQN(analyzer):
 **Find the analysis in [README.ipynb](README.ipynb) notebook.**
 
 &nbsp;
-&nbsp;
+___
 
 
 # Links and Addresses <a name="linksaddresses"></a>
@@ -303,21 +303,15 @@ https://accounts.binance.com/en/register?ref=MJB86NYU to register to Binance and
 
 https://www.binance.com/en/futures/ref/154947021 for binance future and to also save 10%.
 
-___
+&nbsp;
 
 If it was interesting and you've learned something feel free to support me by sending any amount of cryptos to one of the following addresses :)
 
-* Ethereum, Matic Mainet and BSC :
+* Ethereum, Matic Mainet and BSC : *0xa1eF4B0eA4f2a45Dc60baba368BDB8656B6fD580*
 
-0xa1eF4B0eA4f2a45Dc60baba368BDB8656B6fD580
+* Solana : *2c1F4Rs63nL1VCuLP7Qz776X1NemfNUfYjMWTALQzrwh*
 
-* Solana :
-
-2c1F4Rs63nL1VCuLP7Qz776X1NemfNUfYjMWTALQzrwh
-
-* Bitcoin :
-
-3DXrC7ZXxYa4bFbjL3ofgWxfeeiAzzHWf4
+* Bitcoin : *3DXrC7ZXxYa4bFbjL3ofgWxfeeiAzzHWf4*
 
 
 &nbsp;
